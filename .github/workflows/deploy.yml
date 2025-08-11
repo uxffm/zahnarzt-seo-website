@@ -28,10 +28,10 @@ jobs:
     - name: Deploy to Hostinger FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
+        server: 82.25.96.102
+        username: u139044504.snow-kudu-883447.hostingersite.com
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ secrets.FTP_SERVER_DIR }}
+        server-dir: public_html
         local-dir: ./dist/
         exclude: |
           **/.git*
