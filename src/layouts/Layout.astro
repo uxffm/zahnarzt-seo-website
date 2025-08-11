@@ -1,0 +1,132 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+	keywords?: string;
+}
+
+const { title, description = "Professionelle SEO-Dienste für Zahnarztpraxen. Helfen Sie Ihrer Praxis dabei, in den lokalen Suchergebnissen zu dominieren und mehr Patienten zu gewinnen. Bewährte SEO-Strategien speziell für Zahnärzte.", keywords = "Zahnarzt SEO, Dental SEO, Zahnarztpraxis Marketing, lokales SEO für Zahnärzte, Zahnarzt Website Optimierung" } = Astro.props;
+
+// Aktuelle URL für aktive Menü-Items
+const currentPath = Astro.url.pathname;
+
+// Funktion um zu prüfen ob ein Link aktiv ist
+function isActive(path: string): boolean {
+	return currentPath === path;
+}
+---
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="language" content="de" />
+		<meta name="geo.region" content="DE" />
+		<meta name="geo.country" content="Deutschland" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:locale" content="de_DE" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		
+		<!-- Preconnect to Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		
+		<!-- Smooth scrolling -->
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			/* Explizite blaue Farben für aktive Menü-Items */
+			.nav-active {
+				background-color: #dbeafe !important;
+				color: #1d4ed8 !important;
+				border: 1px solid #93c5fd !important;
+			}
+			
+			.nav-active:hover {
+				background-color: #dbeafe !important;
+				color: #1d4ed8 !important;
+			}
+		</style>
+	</head>
+	<body class="bg-white text-gray-900 font-sans">
+		<header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+			<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex justify-between items-center h-16">
+					<div class="flex items-center">
+						<a href="/" class="text-2xl font-bold text-blue-600">SEO für Zahnärzte</a>
+					</div>
+					<div class="hidden md:block">
+						<div class="ml-10 flex items-baseline space-x-4">
+							<a href="/" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive('/') ? 'nav-active' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`}>
+								Startseite
+							</a>
+							<a href="/blog" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive('/blog') ? 'nav-active' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`}>
+								Blog
+							</a>
+							<a href="/contact" class={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive('/contact') ? 'nav-active' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'}`}>
+								Kontakt
+							</a>
+						</div>
+					</div>
+					<div class="md:hidden">
+						<button type="button" class="text-gray-700 hover:text-blue-600">
+							<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<main>
+			<slot />
+		</main>
+		
+		<footer class="bg-gray-900 text-white">
+			<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div>
+						<h3 class="text-lg font-semibold mb-4">SEO für Zahnärzte</h3>
+						<p class="text-gray-300">Professionelle SEO-Dienste, speziell für Zahnarztpraxen entwickelt, um die Online-Sichtbarkeit zu erhöhen und mehr Patienten zu gewinnen.</p>
+					</div>
+					<div>
+						<h3 class="text-lg font-semibold mb-4">Schnellzugriff</h3>
+						<ul class="space-y-2">
+							<li><a href="/" class="text-gray-300 hover:text-white">Startseite</a></li>
+							<li><a href="/blog" class="text-gray-300 hover:text-white">Blog</a></li>
+							<li><a href="/contact" class="text-gray-300 hover:text-white">Kontakt</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+						<p class="text-gray-300">Bereit, Ihre Zahnarztpraxis zu fördern?</p>
+						<a href="/contact" class="inline-block mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Jetzt starten</a>
+					</div>
+				</div>
+				<div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-300">
+					<p>&copy; 2024 DentalSEO Pro. Alle Rechte vorbehalten.</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

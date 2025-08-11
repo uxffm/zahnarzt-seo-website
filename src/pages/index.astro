@@ -1,0 +1,306 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { homepageContent } from '../content/homepage';
+---
+
+<Layout title="Dental SEO Spezialist - Zahnarzt SEO Beratung">
+	<!-- Hero Section - WHAT -->
+	<section class="bg-gradient-to-br from-blue-50 via-blue-25 to-white py-20 animate-fade-in-up">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<!-- Left Content -->
+				<div class="animate-slide-up" data-delay="200">
+					<h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+						{homepageContent.hero.title}
+					</h1>
+					<p class="text-xl text-gray-800 mb-8 max-w-2xl leading-relaxed">
+						{homepageContent.hero.subtitle}
+					</p>
+					<div class="flex items-center mb-6">
+						<span class="text-blue-600 mr-2 text-xl">✓</span>
+						<span class="text-gray-700 font-medium">Spezialisiert auf Dental-SEO</span>
+					</div>
+					<div class="flex flex-col sm:flex-row gap-4 animate-slide-up" data-delay="400">
+						<a href={homepageContent.hero.primaryButton.link} class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+							{homepageContent.hero.primaryButton.text}
+						</a>
+						<a href={homepageContent.hero.secondaryButton.link} class="border-2 border-blue-400 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+							{homepageContent.hero.secondaryButton.text}
+						</a>
+					</div>
+				</div>
+				
+				<!-- Right Results Card -->
+				<div class="animate-slide-up" data-delay="300">
+					<div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+						<div class="flex items-center mb-6">
+							<div class="text-3xl text-blue-400 mr-3">📊</div>
+							<h3 class="text-2xl font-bold text-gray-900">{homepageContent.resultsCard.title}</h3>
+						</div>
+						<div class="space-y-6">
+							{homepageContent.resultsCard.stats.map((stat) => (
+								<div class="flex justify-between items-center">
+									<span class="text-gray-700 font-medium">{stat.label}</span>
+									<span class="text-3xl font-bold text-blue-600">{stat.number}</span>
+								</div>
+							))}
+						</div>
+						<div class="mt-6 pt-4 border-t border-gray-200">
+							<p class="text-sm text-gray-500">{homepageContent.resultsCard.subtitle}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+				{homepageContent.hero.features.map((feature, index) => (
+					<div class="text-center animate-slide-up" data-delay={600 + (index * 200)}>
+						<div class="text-4xl mb-4 transform hover:scale-110 transition-transform duration-300">{feature.icon}</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+						<p class="text-gray-600">{feature.description}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+	
+	<!-- SEO Strategies Section - New Cards -->
+	<section class="py-20 bg-gray-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16 animate-slide-up" data-delay="200">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 max-w-4xl mx-auto leading-relaxed">
+					{homepageContent.seoStrategies.title}
+				</h2>
+				<p class="text-xl text-gray-600 max-w-4xl mx-auto">
+					{homepageContent.seoStrategies.subtitle}
+				</p>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				{homepageContent.seoStrategies.strategies.map((strategy, index) => (
+					<div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" data-delay={400 + (index * 100)}>
+						<div class="text-5xl mb-6 text-blue-400">{strategy.icon}</div>
+						<h3 class="text-xl font-bold text-gray-900 mb-4">{strategy.title}</h3>
+						<p class="text-gray-600 mb-6 text-sm leading-relaxed">
+							{strategy.description}
+						</p>
+						<ul class="text-sm text-gray-600 space-y-3">
+							{strategy.features.map((feature) => (
+								<li class="flex items-center">
+									<span class="text-blue-400 mr-3 text-lg">✓</span>
+									{feature}
+								</li>
+							))}
+						</ul>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+	
+	<!-- Problem Section - PROBLEM -->
+	<section class="py-20 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16 animate-slide-up" data-delay="200">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+					{homepageContent.problem.title}
+				</h2>
+				<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+					{homepageContent.problem.subtitle}
+				</p>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{homepageContent.problem.problems.map((problem, index) => (
+					<div class="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300 animate-slide-up" data-delay={400 + (index * 100)}>
+						<div class="text-4xl mb-6">{problem.icon}</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-4">{problem.title}</h3>
+						<p class="text-gray-600">
+							{problem.description}
+						</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+	
+	<!-- Solution Section - SOLUTION -->
+	<section class="py-20 bg-gray-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16 animate-slide-up" data-delay="200">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+					{homepageContent.solution.title}
+				</h2>
+				<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+					{homepageContent.solution.subtitle}
+				</p>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{homepageContent.solution.solutions.map((solution, index) => (
+					<div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" data-delay={400 + (index * 150)}>
+						<div class="text-4xl mb-6 text-blue-600">{solution.icon}</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-4">{solution.title}</h3>
+						<p class="text-gray-600 mb-6">
+							{solution.description}
+						</p>
+						<ul class="text-sm text-gray-600 space-y-2">
+							{solution.features.map((feature) => (
+								<li class="flex items-center">
+									<span class="text-green-500 mr-2">✓</span>
+									{feature}
+								</li>
+							))}
+						</ul>
+					</div>
+				))}
+			</div>
+			
+			<div class="text-center mt-12 animate-slide-up" data-delay="600">
+				<a href={homepageContent.solution.ctaButton.link} class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+					{homepageContent.solution.ctaButton.text}
+				</a>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Social Proof Section - SOCIAL PROOF -->
+	<section class="py-20 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16 animate-slide-up" data-delay="200">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+					{homepageContent.socialProof.title}
+				</h2>
+				<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+					{homepageContent.socialProof.subtitle}
+				</p>
+			</div>
+			
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+				{homepageContent.socialProof.testimonials.map((testimonial, index) => (
+					<div class="bg-gray-50 p-8 rounded-lg animate-slide-up" data-delay={400 + (index * 150)}>
+						<div class="text-4xl mb-4">⭐</div>
+						<p class="text-gray-700 mb-6 italic">"{testimonial.testimonial}"</p>
+						<div class="border-t pt-4">
+							<div class="font-semibold text-gray-900">{testimonial.name}</div>
+							<div class="text-sm text-gray-600">{testimonial.practice}</div>
+							<div class="text-sm text-gray-600">{testimonial.location}</div>
+							<div class="text-blue-600 font-medium mt-2">{testimonial.results}</div>
+						</div>
+					</div>
+				))}
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{homepageContent.socialProof.stats.map((stat, index) => (
+					<div class="text-center animate-slide-up" data-delay={600 + (index * 100)}>
+						<div class="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
+						<div class="text-gray-600">{stat.label}</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+	
+	<!-- CTA Section - CONTACT -->
+	<section class="py-20 bg-blue-600">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-3xl md:text-4xl font-bold text-white mb-6 animate-slide-up" data-delay="200">
+				{homepageContent.cta.title}
+			</h2>
+			<p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto animate-slide-up" data-delay="300">
+				{homepageContent.cta.subtitle}
+			</p>
+			
+			<div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" data-delay="400">
+				<a href={homepageContent.cta.primaryButton.link} class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+					{homepageContent.cta.primaryButton.text}
+				</a>
+				<a href={homepageContent.cta.secondaryButton.link} class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+					{homepageContent.cta.secondaryButton.text}
+				</a>
+			</div>
+			
+			<p class="text-blue-100 text-sm mt-6 animate-slide-up" data-delay="500">
+				{homepageContent.cta.guarantee}
+			</p>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* Base animation classes */
+	.animate-fade-in-up {
+		opacity: 0;
+		transform: translateY(30px);
+		animation: fadeInUp 0.8s ease-out forwards;
+	}
+	
+	.animate-slide-up {
+		opacity: 0;
+		transform: translateY(50px);
+		transition: all 0.8s ease-out;
+	}
+	
+	.animate-slide-up.animate {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	
+	/* Keyframe animations */
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	
+	/* Hover effects */
+	.hover\:scale-105:hover {
+		transform: scale(1.05);
+	}
+	
+	.hover\:-translate-y-2:hover {
+		transform: translateY(-8px);
+	}
+</style>
+
+<script>
+	// Intersection Observer for scroll animations
+	function initScrollAnimations() {
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+		
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const element = entry.target;
+					const delay = element.getAttribute('data-delay') || '0';
+					
+					setTimeout(() => {
+						element.classList.add('animate');
+					}, parseInt(delay));
+					
+					observer.unobserve(element);
+				}
+			});
+		}, observerOptions);
+		
+		// Observe all elements with animate-slide-up class
+		document.querySelectorAll('.animate-slide-up').forEach((element) => {
+			observer.observe(element);
+		});
+	}
+	
+	// Initialize animations when DOM is loaded
+	document.addEventListener('DOMContentLoaded', initScrollAnimations);
+	
+	// Also initialize on page navigation (for SPA-like behavior)
+	document.addEventListener('astro:page-load', initScrollAnimations);
+</script>

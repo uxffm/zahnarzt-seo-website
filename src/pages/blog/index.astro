@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Direkt die Markdown-Dateien laden
+import { readdir, readFile } from 'fs/promises';
+import { join } from 'path';
+
+const blogDir = join(process.cwd(), 'src/content/blog');
+const files = await readdir(blogDir);
+const mdFiles = files.filter(f => f.endsWith('.md'));
+
+const blogPosts = await Promise.all(mdFiles.map(async (filename) => {
+	const filePath = join(blogDir, filename);
+	const content = await readFile(filePath, 'utf-8');
+	
+	// Frontmatter parsen
+	const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+	let data: any = {};
+	
+	if (frontmatterMatch) {
+		const frontmatter = frontmatterMatch[1];
+		const lines = frontmatter.split('\n');
+		lines.forEach((line: string) => {
+			const [key, ...valueParts] = line.split(':');
+			if (key && valueParts.length > 0) {
+				const value = valueParts.join(':').trim().replace(/^["']|["']$/g, '');
+				data[key.trim()] = value;
+			}
+		});
+	}
+	
+	return {
+		title: data.title,
+		description: data.description,
+		slug: data.slug || filename.replace('.md', ''),
+		tags: data.tags ? data.tags.replace(/[\[\]']/g, '').split(', ') : [],
+		date: data.pubDate,
+		image: data.image || data.img || "/blog/default-image.jpg",
+		author: data.author || "DentalSEO Pro"
+	};
+}));
+
+// Nach Datum sortieren
+blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<Layout 
+	title="Dental SEO Blog - Experten-Tipps & Strategien für Zahnärzte"
+	description="Erhalten Sie Experten-Ratschläge, Tipps und Strategien für Dental SEO, um Ihrer Zahnarztpraxis zu helfen, in den Suchergebnissen höher zu ranken und mehr Patienten anzuziehen."
+	keywords="Dental SEO Blog, Dental Marketing Tipps, Zahnarzt SEO Strategien, Zahnarztpraxis Marketing Blog"
+>
+	<div class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+				Dental SEO Blog
+			</h1>
+			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+				Experten-Einblicke, Strategien und Tipps, um Zahnarztpraxen zu helfen, Suchergebnisse zu dominieren und ihre Patientenbasis zu vergrößern.
+			</p>
+		</div>
+	</div>
+	
+	<div class="py-16 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			{blogPosts.length > 0 ? (
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{blogPosts.map((post) => (
+						<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-200 border border-gray-200">
+							<div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+								<svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+								</svg>
+							</div>
+							<div class="p-6">
+								<div class="flex items-center text-sm text-gray-500 mb-3">
+									{post.tags && post.tags.length > 0 && (
+										<>
+											<span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+												{post.tags[0]}
+											</span>
+											<span class="mx-2">•</span>
+										</>
+									)}
+									<span>{new Date(post.date).toLocaleDateString('de-DE', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+								</div>
+								<h2 class="text-xl font-semibold text-gray-900 mb-3">
+									<a href={`/blog/${post.slug}`} class="hover:text-blue-600">
+										{post.title}
+									</a>
+								</h2>
+								<p class="text-gray-600 mb-4">
+									{post.description}
+								</p>
+								<div class="flex items-center justify-between">
+									<a href={`/blog/${post.slug}`} class="text-blue-600 hover:text-blue-700 font-medium">
+										Weiterlesen →
+									</a>
+									{post.author && (
+										<span class="text-sm text-gray-500">Von {post.author}</span>
+									)}
+								</div>
+							</div>
+						</article>
+					))}
+				</div>
+			) : (
+				<div class="text-center py-16">
+					<div class="text-6xl mb-4">📝</div>
+					<h3 class="text-2xl font-semibold text-gray-900 mb-4">Noch keine Blog-Artikel verfügbar</h3>
+					<p class="text-gray-600 max-w-md mx-auto">
+						Wir arbeiten an spannenden Artikeln über Dental-SEO. Schauen Sie bald wieder vorbei!
+					</p>
+				</div>
+			)}
+		</div>
+	</div>
+	
+	<div class="py-16 bg-gray-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-3xl font-bold text-gray-900 mb-6">
+				Bleiben Sie auf dem Laufenden mit Dental-SEO-Insights
+			</h2>
+			<p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+				Erhalten Sie die neuesten Dental-Marketing-Strategien und SEO-Tipps direkt in Ihren Posteingang.
+			</p>
+			<div class="max-w-md mx-auto">
+				<div class="flex">
+					<input 
+						type="email" 
+						placeholder="Ihre E-Mail-Adresse eingeben" 
+						class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+					>
+					<button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-r-lg font-medium transition-colors duration-200">
+						Abonnieren
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
