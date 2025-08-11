@@ -26,20 +26,14 @@ git branch -M main
 git push -u origin main
 ```
 
-### Schritt 2: GitHub Secrets einrichten
-1. Gehe zu deinem GitHub Repository
-2. Klicke auf **Settings** → **Secrets and variables** → **Actions**
-3. Klicke auf **New repository secret**
-4. Füge nur noch **1 Secret** hinzu (die anderen sind bereits im Code eingetragen):
-
-| Name | Wert |
-|------|------|
-| `FTP_PASSWORD` | Dein FTP-Passwort von Hostinger |
-
-**Hinweis:** FTP-Server, Benutzername und Verzeichnis sind bereits im Workflow eingetragen:
+### Schritt 2: Fertig! 🎉
+Alle FTP-Daten sind bereits im Workflow eingetragen:
 - **FTP-Server**: `82.25.96.102`
 - **FTP-Benutzername**: `u139044504.snow-kudu-883447.hostingersite.com`
+- **FTP-Passwort**: `BananaShake34$` (bereits eingetragen)
 - **FTP-Verzeichnis**: `public_html`
+
+**Du musst keine Secrets hinzufügen - alles ist bereits konfiguriert!**
 
 ### Schritt 3: Code pushen
 ```bash
