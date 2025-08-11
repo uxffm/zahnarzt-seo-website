@@ -25,6 +25,11 @@ jobs:
     - name: Build website
       run: npm run build
       
+    - name: Prepare files for upload
+      run: |
+        mkdir -p upload
+        cp -r dist/* upload/
+        
     - name: Deploy to Hostinger FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -32,7 +37,8 @@ jobs:
         username: u139044504.snow-kudu-883447.hostingersite.com
         password: BananaShake34$
         server-dir: public_html/
-        local-dir: ./dist/
+        local-dir: ./upload/
+        dangerous-clean-slate: true
         exclude: |
           **/.git*
           **/.git*/**
