@@ -1,4 +1,5 @@
 // Homepage Content - Hier können Sie alle Inhalte der Startseite einfach ändern
+// Letzter Update: GitHub Actions Deploy Test
 
 export const homepageContent = {
   // Hero Section
