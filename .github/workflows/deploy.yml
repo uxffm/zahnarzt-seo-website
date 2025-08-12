@@ -25,10 +25,16 @@ jobs:
     - name: Build website
       run: npm run build
       
+    - name: Check build output
+      run: |
+        ls -la dist/
+        echo "Build completed successfully"
+        
     - name: Prepare files for upload
       run: |
         mkdir -p upload
         cp -r dist/* upload/
+        ls -la upload/
         
     - name: Deploy to Hostinger FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -39,6 +45,7 @@ jobs:
         server-dir: public_html/
         local-dir: ./upload/
         dangerous-clean-slate: false
+        timeout: 600000
         exclude: |
           **/.git*
           **/.git*/**
