@@ -41,7 +41,7 @@ jobs:
       with:
         server: 82.25.96.102
         username: u139044504.seodent.de
-        password: ${{ secrets.FTP_PASSWORD }}
+        password: BananaShake34$
         port: 21
         server-dir: public_html/
         local-dir: ./upload/
