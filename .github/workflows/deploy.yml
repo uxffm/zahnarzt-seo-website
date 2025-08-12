@@ -33,12 +33,12 @@ jobs:
     - name: Deploy to Hostinger FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: 82.25.96.102
-        username: u139044504.snow-kudu-883447.hostingersite.com
-        password: BananaShake34$
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         server-dir: public_html/
         local-dir: ./upload/
-        dangerous-clean-slate: true
+        dangerous-clean-slate: false
         exclude: |
           **/.git*
           **/.git*/**
