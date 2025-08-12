@@ -1,6 +1,7 @@
 ---
 title: "Lokales SEO für Zahnärzte: So wirst du in deiner Stadt gefunden"
 description: "Die Konkurrenz unter Zahnärzten findet vor allem lokal statt. Erfahre in diesem Ratgeber, wie du mit lokalem SEO deine Sichtbarkeit in deiner Stadt erhöhst. Von Google Maps über lokale Keywords bis hin zu Branchenverzeichnissen – mit diesen Tipps machst du deine Praxis in der Region bekannt."
+author: "SEO für Zahnärzte"
 pubDate: "2025-06-11"
 slug: "lokales-seo-fuer-zahnaerzte"
 tags: ['SEO', 'Zahnärzte', 'Online-Marketing', 'Lokales SEO']

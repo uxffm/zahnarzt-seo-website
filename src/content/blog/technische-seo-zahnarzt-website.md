@@ -1,6 +1,7 @@
 ---
 title: "Die Rolle technischer SEO-Aspekte für Zahnarzt-Websites" 
 description: "Warum technische SEO für die Website einer Zahnarztpraxis wichtig ist und welche technischen Faktoren die Sichtbarkeit bei Google beeinflussen." 
+author: "SEO für Zahnärzte"
 pubDate: "2025-06-11" 
 slug: "technische-seo-zahnarzt-website" 
 tags: ['SEO', 'Zahnärzte', 'Online-Marketing', 'Technisches SEO']

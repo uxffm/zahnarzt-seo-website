@@ -1,6 +1,7 @@
 ---
 title: "Wie Content-Marketing Zahnärzten hilft, bei Google zu punkten" 
 description: "Warum inhaltliche Strategien wie Bloggen und Ratgebertexte für Zahnarztpraxen im SEO so wertvoll sind und wie sie zu besserer Google-Sichtbarkeit führen." 
+author: "SEO für Zahnärzte"
 pubDate: "2025-06-11" 
 slug: "content-marketing-seo-zahnarzt" 
 tags: ['SEO', 'Zahnärzte', 'Online-Marketing', 'Content Marketing']

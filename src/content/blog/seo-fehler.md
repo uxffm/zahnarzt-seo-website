@@ -1,6 +1,7 @@
 ---
 title: "5 SEO-Fehler, die Zahnarztpraxen immer noch machen"
 description: "Auch 2025 gibt es typische SEO-Fehler, die viele Zahnarztpraxen begehen. Dieser artikel stellt fünf häufige Patzer vor – vom ungenutzten Google-Profil bis zur langsamen Website – und zeigt dir, wie du diese Stolperfallen vermeidest, um online erfolgreicher neue Patienten zu gewinnen." 
+author: "SEO für Zahnärzte"
 pubDate: "2025-06-11"
 slug: "seo-fehler"
 tags: ['SEO', 'Zahnärzte', 'Online-Marketing']

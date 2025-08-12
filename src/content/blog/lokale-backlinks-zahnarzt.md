@@ -4,7 +4,8 @@ description: "Tipps und Strategien, wie Zahnarztpraxen lokale Verlinkungen aufba
 pubDate: "2025-06-11" 
 slug: "lokale-backlinks-zahnarzt" 
 tags: ['SEO', 'Zahnärzte', 'Online-Marketing', 'Backlinks', 'Lokales SEO']
-img: "/lokale-backlinks-zahnarzt.png"
+img: "/lokale-backlinks-zahnarzte.png"
+author: "SEO für Zahnärzte"
 ---
 
 # Lokale Backlinks: Wie Zahnärzte ihr regionales Netzwerk online nutzen können

@@ -1,6 +1,7 @@
 ---
-title: "SEO vs. SEA für Zahnärzte – was ist besser?" 
+title: "SEO vs. SEA für Zahnärzte – Was ist besser?" 
 description: "Ein Vergleich zwischen Suchmaschinenoptimierung (SEO) und Suchmaschinenwerbung (SEA) für Zahnarztpraxen: Vor- und Nachteile beider Ansätze und welcher sich wann lohnt." 
+author: "SEO für Zahnärzte"
 pubDate: "2025-06-11" 
 slug: "seo-vs-sea-zahnaerzte" 
 tags: ['SEO', 'Zahnärzte', 'Online-Marketing', 'SEA']

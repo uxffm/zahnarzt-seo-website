@@ -1,6 +1,7 @@
 ---
 title: "Wie Google-Bewertungen deine Zahnarztpraxis nach vorne bringen"
 description: "Positive Google-Bewertungen sind mehr als nur Schmuck – sie können das Ranking deiner Zahnarztpraxis deutlich verbessern und das Vertrauen neuer Patienten gewinnen. In diesem Artikel erfährst du, welchen Einfluss Bewertungen auf SEO und Patientengewinnung haben und wie du aktiv mehr Rezensionen erhältst."
+author: "SEO für Zahnärzte"
 pubDate: "2025-06-11"
 slug: "google-bewertungen"
 tags: ['SEO', 'Zahnärzte', 'Online-Marketing', 'Bewertungen']
