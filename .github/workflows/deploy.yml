@@ -40,8 +40,9 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: 82.25.96.102
-        username: u139044504
+        username: u139044504.seodent.de
         password: BananaShake34$
+        port: 21
         server-dir: public_html/
         local-dir: ./upload/
         dangerous-clean-slate: false
