@@ -40,7 +40,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: 82.25.96.102
-        username: u139044504.snow-kudu-883447.hostingersite.com
+        username: u139044504
         password: BananaShake34$
         server-dir: public_html/
         local-dir: ./upload/
