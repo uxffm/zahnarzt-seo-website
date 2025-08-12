@@ -46,3 +46,4 @@ jobs:
         server-dir: public_html/
         local-dir: ./upload/
         dangerous-clean-slate: false
+        log-level: verbose
