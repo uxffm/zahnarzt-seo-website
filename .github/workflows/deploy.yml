@@ -45,17 +45,3 @@ jobs:
         server-dir: public_html/
         local-dir: ./upload/
         dangerous-clean-slate: false
-        timeout: 600000
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.env
-          **/.env.*
-          **/README.md
-          **/.github/**
-          **/src/**
-          **/package*.json
-          **/tailwind.config.js
-          **/tsconfig.json
-          **/astro.config.mjs
